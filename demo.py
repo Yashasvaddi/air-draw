@@ -1,7 +1,7 @@
 import streamlit as st
 from subprocess import call
 from PIL import Image
-
+import os
 # Custom CSS for background color and button hover effect
 background_color = """
     <style>
@@ -47,6 +47,10 @@ except FileNotFoundError:
 st.markdown("<h3 style='text-align: center;'>Draw in the air using your hands and see your artwork on screen!</h3>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>This app uses computer vision to track your hand movements and allows you to draw on a virtual canvas.</p>", unsafe_allow_html=True)
 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Build the path to cv.py
+cv_path = os.path.join(current_dir, "cv.py")
 # Create two columns for buttons
 col1, col2 = st.columns(2)
 
