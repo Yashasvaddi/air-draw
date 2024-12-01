@@ -50,30 +50,37 @@ st.markdown("<p style='text-align: center;'>This app uses computer vision to tra
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Build the path to cv.py
-cv_path = os.path.join(current_dir, "cv.py")
+cv_path1 = os.path.join(current_dir, "cv.py")
+cv_path2 = os.path.join(current_dir, "ss.py")
 # Create two columns for buttons
 col1, col2 = st.columns(2)
 
 with col1:
     if st.button("Open AirDraw"):
         if not os.path.exists(cv_path):
-            st.error(f"AirDraw script not found at {cv_path}")
+            st.error(f"AirDraw script not found at {cv_path1}")
         else:
             try:
                 with st.spinner("Launching AirDraw..."):
                     # Run the cv.py script
-                    call(["python", cv_path])
+                    call(["python", cv_path1])
                 st.success("AirDraw launched successfully!")
             except Exception as e:
                 st.error(f"An error occurred while launching AirDraw: {e}")
 # Additional button to process the image
 with col2:
-    if st.button("Process the Image"):
-        try:
-            st.write("Processing the image... ")
-            call(["python", "C:\\codes\\college stuff\\ss.py"])
-        except Exception as e:
-            st.error(f"An error occurred while processing the image: {e}")
+   with col1:
+    if st.button("Launch OCR Module"):
+        if not os.path.exists(cv_path2):
+            st.error(f"OCR module not found at {}")
+        else:
+            try:
+                with st.spinner("Launching OCR Module..."):
+                    # Run the OCR module script
+                    call(["python", cv_path2])
+                st.success("OCR Module launched successfully!")
+            except Exception as e:
+                st.error(f"An error occurred while launching the OCR Module: {e}")
 
 # Footer
 st.markdown("<p style='text-align: center; color: grey;'>Project by Yashas Vaddi</p>", unsafe_allow_html=True)
