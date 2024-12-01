@@ -72,7 +72,7 @@ with col2:
    with col1:
     if st.button("Launch OCR Module"):
         if not os.path.exists(cv_path2):
-            st.error(f"OCR module not found at {}")
+            st.error(f"OCR module not found at {cv_path2}")
         else:
             try:
                 with st.spinner("Launching OCR Module..."):
