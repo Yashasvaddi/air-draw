@@ -55,7 +55,7 @@ with col1:
     if st.button("Open AirDraw"):
         try:
             st.write("Launching AirDraw... ")
-            call(["python", "C:\\codes\\college stuff\\cv.py"])
+            call(["python", "https://raw.githubusercontent.com/Yashasvaddi/air-draw/refs/heads/main/cv.py"])
         except Exception as e:
             st.error(f"An error occurred while launching AirDraw: {e}")
 
