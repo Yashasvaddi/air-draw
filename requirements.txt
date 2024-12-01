@@ -1,0 +1,7 @@
+opencv-python
+opencv-python-headless  # Optional: Use this if GUI features of OpenCV are not needed.
+easyocr
+numpy
+mediapipe
+pillow  # Required by EasyOCR for image processing.
+tkinterweb  # Alternative tkinter package for web-based apps, as tkinter itself is built-in.
